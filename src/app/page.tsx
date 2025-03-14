@@ -1,5 +1,5 @@
 "use client";
-import { Canvas } from "fabric";
+import { Canvas, Textbox } from "fabric";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -16,7 +16,12 @@ export default function Home() {
       width: 500,
       height: 500,
     });
-
+    const text = new Textbox("Hello World", {
+      left: 100,
+      top: 100,
+      width: 200,
+    });
+    fabricCanvasObj.add(text);
     fabricCanvasObj.backgroundColor = "#fff";
     fabricCanvasObj.renderAll();
     setCanvasIntance(fabricCanvasObj);
